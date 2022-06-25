@@ -1,8 +1,9 @@
 package com.yuemaz.wiki.service.impl;
 
-import com.yuemaz.wiki.entity.Ebook;
 import com.yuemaz.wiki.mapper.EbookMapper;
+import com.yuemaz.wiki.resp.EbookResp;
 import com.yuemaz.wiki.service.EbookService;
+import com.yuemaz.wiki.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -19,7 +20,7 @@ public class EbookServiceImpl implements EbookService {
     private EbookMapper ebookMapper;
 
     @Override
-    public List<Ebook> list() {
-        return ebookMapper.selectByExample(null);
+    public List<EbookResp> list() {
+        return CopyUtil.copyList(ebookMapper.selectByExample(null), EbookResp.class);
     }
 }

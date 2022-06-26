@@ -1,5 +1,6 @@
 package com.yuemaz.wiki.controller;
 
+import com.yuemaz.wiki.req.EbookReq;
 import com.yuemaz.wiki.resp.Result;
 import com.yuemaz.wiki.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class EbookController {
     private EbookService ebookService;
 
     @GetMapping("/list")
-    public Result list() {
-        return Result.ok().setData(ebookService.list());
+    public Result list(EbookReq req) {
+        return Result.ok().setData(ebookService.list(req));
     }
 }

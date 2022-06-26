@@ -1,5 +1,6 @@
 package com.yuemaz.wiki.service;
 
+import com.yuemaz.wiki.req.EbookReq;
 import com.yuemaz.wiki.resp.EbookResp;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
  */
 public interface EbookService {
 
-    List<EbookResp> list();
+    List<EbookResp> list(EbookReq req);
 }

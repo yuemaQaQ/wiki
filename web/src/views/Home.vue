@@ -80,15 +80,12 @@ for (let i = 0; i < 23; i++) {
 export default defineComponent({
   name: 'Home',
   setup() {
-    console.log("setup...");
     const ebooks = ref();
     onMounted(() => {
-      console.log("onMounted...");
       axios.get("/ebook/list").then(
           (response) => {
             const data = response.data;
             ebooks.value = data.data;
-            console.log(response)
           }
       )
     });
